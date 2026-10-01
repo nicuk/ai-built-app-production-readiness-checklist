@@ -103,6 +103,8 @@ We scanned **53 public repositories** that declare they were built with Lovable,
 
 **The "vibe-coded apps have no tests" story is wrong — 91% have at least one test file.** The gap is the security layer, input validation and secrets hygiene.
 
+The write-up: [What 53 AI-built apps get wrong](https://nicchin.com/blog/vibe-coded-app-security-study).
+
 Full numbers, what they do not say, and the measured accuracy of the scanner that produced them: [`research/results.md`](research/results.md). Method and limits: [`research/method.md`](research/method.md). Anonymised data: [`research/dataset.csv`](research/dataset.csv).
 
 The most serious failures in an AI-built app — Row Level Security, admin role checks, tenant isolation — are invisible from a repository. That is why the items above are marked 👤.
