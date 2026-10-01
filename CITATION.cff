@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+title: >-
+  Production readiness checklist for AI-built apps, with measured research on 53
+  public repositories
+message: If you use this checklist or cite these rates, please cite it as below.
+type: dataset
+authors:
+  - family-names: Chin
+    given-names: Nic
+    website: "https://nicchin.com"
+repository-code: "https://github.com/nicuk/ai-built-app-production-readiness-checklist"
+abstract: >-
+  A launch checklist for applications built with Lovable, Bolt, v0, Cursor,
+  Replit or Claude Code, with each item triaged by whether it blocks a launch
+  and by whether it can be checked automatically or needs human judgement.
+  Accompanied by a static analysis of 53 public repositories that declare the AI
+  tool they were built with, reporting rates per failure category with 95%
+  confidence intervals, and reporting the measured precision and recall of the
+  scanner that produced them.
+keywords:
+  - technical due diligence
+  - code audit
+  - AI-generated code
+  - application security
+  - Supabase
+  - vibe coding
+license: MIT
+date-released: "2026-10-02"

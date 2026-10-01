@@ -50,13 +50,18 @@ would be a fabricated data point in a study about failure rates.
 | `secretsHighConfidence` | A committed value matching a known credential format (vendor-issued key patterns, private keys, connection strings with a password) |
 | `secretsAny` | The above plus lower-confidence matches needing human review |
 | `envFileCommitted` | A `.env`-family file present in the repository |
-| `noTests` / `noCi` / `noLinter` / `noTypeSafety` | No test files, no CI configuration, no linter configuration, TypeScript not in strict mode |
+| `noTests` / `noCi` / `noLinter` / `noTypeSafety` | No test file anywhere in the tree, no CI configuration, no linter configuration, TypeScript not in strict mode. `noTests` measures the presence of a test file, not whether the tests are meaningful or run |
+| `hasServerCode` | The repository serves requests: an `api/`, `server/`, `backend/` or serverless `functions/` directory, a server-language entry point, or a server framework in its manifest. Re-derived per repository from the file tree, because a control that cannot appear in a frontend is not a control that is missing |
 | `noSecurityLayer` | No security middleware detected (rate limiting, CORS, helmet-equivalent) |
 | `unvalidatedInput` | Request bodies used without a validation step |
 | `injectionSink` | SQL built by concatenation, `eval`, or equivalent |
 | `secretInLogs` | A credential written to a log line |
 | `oversizedFiles` | Files beyond a maintainability threshold |
 | `healthScore` | The scanner's 0–100 composite; lower is worse |
+| `criticalRisks` | Findings the scanner rates critical: a committed credential or env file, an injection sink reachable from request input, or an authorisation check satisfied by data the caller controls. Severity is the scanner’s own, not a CVSS score, and “at least 45% carry a critical finding” should be read with that definition in hand |
+
+Rates in the results carry 95% Wilson confidence intervals. At N = 53 they are wide — a 72% point
+estimate spans 58–82% — and the interval is the honest figure.
 
 ## What this cannot tell you
 
@@ -77,10 +82,15 @@ No repository is named, linked or fingerprinted anywhere in this repository, and
 dataset carries no identifier. Names were kept only in a local file so that a finding could be
 re-checked.
 
-Where the scan indicated a **live, exploitable credential**, the repository owner was contacted
-privately and nothing about it was published. Every high-confidence credential finding in this study
-was also opened by hand before any rate was published; see the accuracy section of the results. If you believe your repository was in this sample and
-you want to know what was found, email the address on [nicchin.com](https://nicchin.com).
+Every high-confidence credential finding in this study was opened by hand before any rate was
+published; see the accuracy section of the results. Three repositories had one. **None is a live
+vendor key**: two are default passwords written into code, and the third is an install script whose
+value may come from the environment.
+
+Nothing about any of them is published here — not the name, not the file, not the line — and the
+rates are counts only. The owners of the two default-password findings are being contacted
+privately. If you believe your repository was in this sample and want to know what was found, email
+the address on [nicchin.com](https://nicchin.com).
 
 ## Repeating this
 

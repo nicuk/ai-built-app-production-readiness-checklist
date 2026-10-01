@@ -87,21 +87,21 @@ If the app itself calls a model, it inherits a second class of problem.
 
 ## Research: what AI-built apps actually get wrong
 
-We scanned **53 public repositories** that declare they were built with Lovable, Bolt, v0, Cursor, Replit or Claude Code, on 1 October 2026.
+We scanned **53 public repositories** that declare they were built with Lovable, Bolt, v0, Cursor, Replit or Claude Code, on 1 October 2026. Rates carry 95% confidence intervals, because at this sample size the interval is the honest figure.
 
-| Failure | Rate |
-|---|---|
-| No security middleware detected | **72%** |
-| No `.env.example` | 68% |
-| At least one critical finding | at least 45% |
-| No linter | 34% |
-| No CI pipeline | 28% |
-| Request bodies used without validation | at least 23% |
-| `.env` file committed | at least 19% |
-| Committed credential (high confidence) | at least 6% |
-| **No automated tests** | **9%** |
+| Failure | Rate | 95% CI |
+|---|---|---|
+| No security middleware *(among the 40 repos with server code)* | **73%** | 57–84% |
+| No `.env.example` | 68% | 55–79% |
+| At least one critical finding | at least 45% | 33–59% |
+| No linter | 34% | 23–47% |
+| No CI pipeline | 28% | 18–42% |
+| Request bodies used without validation *(repos with server code)* | at least 23% | 12–38% |
+| `.env` file committed | at least 19% | 11–31% |
+| Committed credential (high confidence) | at least 6% | 2–15% |
+| **No test file at all** | **9%** | 4–20% |
 
-**The "vibe-coded apps have no tests" story is wrong — 91% have tests.** The gap is the security layer, input validation and secrets hygiene.
+**The "vibe-coded apps have no tests" story is wrong — 91% have at least one test file.** The gap is the security layer, input validation and secrets hygiene.
 
 Full numbers, what they do not say, and the measured accuracy of the scanner that produced them: [`research/results.md`](research/results.md). Method and limits: [`research/method.md`](research/method.md). Anonymised data: [`research/dataset.csv`](research/dataset.csv).
 
