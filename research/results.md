@@ -4,6 +4,13 @@
 
 Nine each from Lovable, Bolt, v0, Cursor and Claude Code, eight from Replit — every one declaring the tool itself, in a GitHub topic or its README. Median size 27,573 lines (range 1,739–344,373). Median health score 40 / 100.
 
+Larger measurements of this question exist, and on reach they are better than this one: Deng, Fan
+and Meng audited 200 publicly deployed vibe-coded applications ([arXiv:2606.23130](https://arxiv.org/abs/2606.23130)),
+and the SusVibes benchmark measured agent-generated code on 186 real-world tasks
+([arXiv:2512.03262](https://arxiv.org/abs/2512.03262)). What this study adds is repository-level
+rates with intervals, a per-repository dataset, and the measured accuracy of its own scanner. See
+[`method.md`](method.md).
+
 Rates are given with 95% Wilson confidence intervals. At this sample size they are wide, and the interval matters more than the point estimate: "72%" is really "somewhere between 58% and 82%".
 
 ---

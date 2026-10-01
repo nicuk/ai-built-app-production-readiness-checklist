@@ -4,9 +4,29 @@ What was measured, how the sample was chosen, and what the numbers cannot tell y
 
 ## The question
 
-Published checklists for AI-built apps are written from opinion. Nobody publishes measurements of
-what these apps actually get wrong. This run measures a sample of public repositories that say they
-were built with an AI tool, and reports rates per failure category.
+Published checklists for AI-built apps are mostly written from opinion. Measurements do exist, and
+they are better than this one on reach:
+
+- Deng, Fan and Meng, *Understanding the (In)Security of Vibe-Coded Applications*
+  ([arXiv:2606.23130](https://arxiv.org/abs/2606.23130), revised 14 September 2026), collected 9,041
+  open-source applications built with Claude Code and Lovable and audited 200 **publicly deployed**
+  ones, finding 1,186 vulnerabilities, 91.0% of audited apps affected, 65.77% rated Critical or
+  High, concentrated in broken access control, injection and authentication.
+- Zhao et al., *Is Vibe Coding Safe?* (SusVibes,
+  [arXiv:2512.03262](https://arxiv.org/abs/2512.03262), revised 21 September 2026), benchmarked
+  agent-generated code on 186 real-world tasks: 57% of SWE-Agent with Claude 4 Sonnet solutions were
+  functionally correct, and only 11.8% were secure.
+
+What this study adds is narrower and more boring: **repository-level rates per failure category,
+with 95% intervals, an anonymised per-repository dataset, and the measured precision and recall of
+the instrument that produced them** — including the first run's 25% precision and how it was caught.
+A reader can check our arithmetic, and can check how wrong our scanner is.
+
+It is also worth saying what the stronger work implies about this one. Deng et al.'s largest
+category, broken access control, is precisely what a repository scan cannot see: the policy lives in
+a Supabase or hosting project. Their numbers come from auditing deployed applications; ours come
+from reading code. Where the two disagree, believe theirs — and read the gap as the argument for the
+checklist items marked as needing a human.
 
 ## Sample
 
