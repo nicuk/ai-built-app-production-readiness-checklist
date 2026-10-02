@@ -1,5 +1,7 @@
 # Production readiness checklist for AI-built apps
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23094508.svg)](https://doi.org/10.5281/zenodo.23094508)
+
 A launch checklist for apps built with **Lovable, Bolt, v0, Cursor, Replit or Claude Code**, deployed on **Supabase, Netlify or Vercel**.
 
 Every item is triaged:
@@ -110,6 +112,14 @@ Full numbers, what they do not say, and the measured accuracy of the scanner tha
 The most serious failures in an AI-built app — Row Level Security, admin role checks, tenant isolation — are invisible from a repository. That is why the items above are marked 👤.
 
 ---
+
+---
+
+## Citing this
+
+Chin, N. (2026). *Production readiness checklist for AI-built apps, with measured research on 53 public repositories*. Zenodo. https://doi.org/10.5281/zenodo.23094508
+
+That DOI always resolves to the latest version. [`CITATION.cff`](CITATION.cff) has the machine-readable form.
 
 ## About
 
