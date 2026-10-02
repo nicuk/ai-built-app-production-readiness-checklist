@@ -70,9 +70,9 @@ would be a fabricated data point in a study about failure rates.
 | `secretsHighConfidence` | A committed value matching a known credential format (vendor-issued key patterns, private keys, connection strings with a password) |
 | `secretsAny` | The above plus lower-confidence matches needing human review |
 | `envFileCommitted` | A `.env`-family file present in the repository |
-| `noTests` / `noCi` / `noLinter` / `noTypeSafety` | No test file anywhere in the tree, no CI configuration, no linter configuration, TypeScript not in strict mode. `noTests` measures the presence of a test file, not whether the tests are meaningful or run |
+| `noTests` / `noCi` / `noLinter` / `noTypeSafety` | No sign of testing, no CI configuration, no linter configuration, TypeScript not in strict mode. `noTests` is true only when the repository has no test file, no test configuration, no test-runner dependency and no file path containing `test` or `spec`; it is therefore a lower bound on "has no tests", and it says nothing about whether tests are meaningful or run (corrected 2 October 2026; v1.0.1 described it as "no test file") |
 | `hasServerCode` | The repository serves requests: an `api/`, `server/`, `backend/` or serverless `functions/` directory, a server-language entry point, or a server framework in its manifest. Re-derived per repository from the file tree, because a control that cannot appear in a frontend is not a control that is missing |
-| `noSecurityLayer` | No security middleware detected (rate limiting, CORS, helmet-equivalent) |
+| `noSecurityLayer` | No security tooling detected: no dependency or code-scanning configuration (Dependabot, Renovate, CodeQL, Semgrep, Snyk, Trivy, gitleaks, a `SECURITY.md`) and no security-audit package in the manifest (`snyk`, `audit-ci`, `eslint-plugin-security`, `bandit`, `pip-audit`, `brakeman` and similar). **Despite the column name, this does not detect runtime middleware** such as rate limiting, CORS or helmet; it was mislabelled that way in v1.0.1 and corrected on 2 October 2026. The column name is kept so existing references to the dataset still resolve |
 | `unvalidatedInput` | Request bodies used without a validation step |
 | `injectionSink` | SQL built by concatenation, `eval`, or equivalent |
 | `secretInLogs` | A credential written to a log line |

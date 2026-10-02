@@ -93,7 +93,7 @@ We scanned **53 public repositories** that declare they were built with Lovable,
 
 | Failure | Rate | 95% CI |
 |---|---|---|
-| No security middleware *(among the 40 repos with server code)* | **73%** | 57–84% |
+| No automated security checks *(no Dependabot, CodeQL, Snyk or equivalent)* | **at least 72%** | 58–82% |
 | No `.env.example` | 68% | 55–79% |
 | At least one critical finding | at least 45% | 33–59% |
 | No linter | 34% | 23–47% |
@@ -101,9 +101,11 @@ We scanned **53 public repositories** that declare they were built with Lovable,
 | Request bodies used without validation *(repos with server code)* | at least 23% | 12–38% |
 | `.env` file committed | at least 19% | 11–31% |
 | Committed credential (high confidence) | at least 6% | 2–15% |
-| **No test file at all** | **9%** | 4–20% |
+| **No sign of testing at all** *(no test file, test config or test runner)* | **at least 9%** | 4–20% |
 
-**The "vibe-coded apps have no tests" story is wrong — 91% have at least one test file.** The gap is the security layer, input validation and secrets hygiene.
+**The "vibe-coded apps have no tests" story looks wrong — 91% show at least some sign of testing.** Whether those tests are real and run was not checked. The clearer gaps are automated security checks, input validation and secrets hygiene.
+
+> **Correction, 2 October 2026.** The first row was published in v1.0.1 as "no security middleware (rate limiting, CORS)" at 73%. The scanner column behind it detects security *tooling* (dependency and code scanning), not request middleware. The count was right; the label was wrong. Rate limiting and CORS were not measured. The test row was also narrowed: it counts any sign of testing, not only a test file. Details: [`research/results.md`](research/results.md#correction-2-october-2026).
 
 The write-up: [What 53 AI-built apps get wrong](https://nicchin.com/blog/vibe-coded-app-security-study).
 
