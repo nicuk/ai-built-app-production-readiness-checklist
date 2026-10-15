@@ -107,7 +107,7 @@ We scanned **53 public repositories** that declare they were built with Lovable,
 
 > **Correction, 2 October 2026.** The first row was published in v1.0.1 as "no security middleware (rate limiting, CORS)" at 73%. The scanner column behind it detects security *tooling* (dependency and code scanning), not request middleware. The count was right; the label was wrong. Rate limiting and CORS were not measured. The test row was also narrowed: it counts any sign of testing, not only a test file. Details: [`research/results.md`](research/results.md#correction-2-october-2026).
 
-The write-up: [What 53 AI-built apps get wrong](https://nicchin.com/blog/vibe-coded-app-security-study).
+The write-up: [What 53 AI-built apps get wrong](https://nicchin.com/blog/vibe-coded-app-security-study). Every table with its intervals, on one page: [systemaudit.dev/research/ai-built-apps](https://systemaudit.dev/research/ai-built-apps).
 
 Full numbers, what they do not say, and the measured accuracy of the scanner that produced them: [`research/results.md`](research/results.md). Method and limits: [`research/method.md`](research/method.md). Anonymised data: [`research/dataset.csv`](research/dataset.csv).
 
