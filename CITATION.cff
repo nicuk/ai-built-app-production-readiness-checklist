@@ -8,8 +8,9 @@ authors:
   - family-names: Chin
     given-names: Nic
     website: "https://nicchin.com"
+    orcid: "https://orcid.org/0009-0002-8302-8086"
 repository-code: "https://github.com/nicuk/ai-built-app-production-readiness-checklist"
-doi: 10.5281/zenodo.23100456
+doi: 10.5281/zenodo.23094508
 identifiers:
   - type: doi
     value: 10.5281/zenodo.23094508
@@ -34,5 +35,5 @@ keywords:
   - Supabase
   - vibe coding
 license: MIT
-version: v1.0.2
-date-released: "2026-10-02"
+version: v1.0.3
+date-released: "2026-11-18"

@@ -3,7 +3,8 @@
   "title": "Production readiness checklist for AI-built apps, with measured research on 53 public repositories",
   "creators": [
     {
-      "name": "Chin, Nic"
+      "name": "Chin, Nic",
+      "orcid": "0009-0002-8302-8086"
     }
   ],
   "description": "<p>A launch checklist for applications built with Lovable, Bolt, v0, Cursor, Replit or Claude Code, with each item triaged by whether it blocks a launch and by whether it can be checked automatically or needs human judgement.</p><p>Accompanied by a static analysis of 53 public repositories that declare the AI tool they were built with, reporting rates per failure category with 95% confidence intervals, and reporting the measured precision and recall of the scanner that produced them.</p><p>Write-up with every table: <a href=\"https://nicchin.com/blog/vibe-coded-app-security-study\">nicchin.com/blog/vibe-coded-app-security-study</a>.</p>",
